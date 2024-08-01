@@ -3,14 +3,13 @@ import { useForm } from 'react-hook-form'
 
 
 export function Login () {
-  const [pending, setPending] = useState(false)
-  const { register, handleSubmit, formState: { errors } } = useForm()
-  const authenticate = () => {
-    setPending(true)
-    setTimeout(() => {
-      setPending(false)
-    }, 1000)
+
+  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm()
+  const authenticate = async (data) => {
+    await sleep(3000)
+    console.log(data)
   }
+  const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
   return (
     <>
     <h1>Continue your adventure</h1>
@@ -22,7 +21,7 @@ export function Login () {
       <input 
         type="text"
         {...register("username", {
-          required: "Enter a valid username"
+          required: {value: true, message: "Enter a vaild username"}
         })}
         aria-invalid={errors.username ? "true" : "false"}
       />
@@ -36,15 +35,15 @@ export function Login () {
       <input 
         type="password"
         {...register("password", {
-          required: true,
-          minLength: {value: 8, message: "Password is up to 8 characters"}
+          required: {value: true, message: "Password must be 8 characters"},
+          minLength: {value: 8, message: "Password must be 8 characters"}
         })} 
       />
       <small>
         {errors.password && <span>{errors.password.message}</span>}
       </small>
-      <button type="submit" disabled={pending}>
-        {pending ? "Going" : "Go"}
+      <button type="submit" disabled={isSubmitting}>
+        {isSubmitting ? 'Going' : 'Go'}
       </button>
     </form>
     </>
