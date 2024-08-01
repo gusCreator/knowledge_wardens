@@ -1,5 +1,6 @@
-import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { Input } from './forms/Input'
+import { passwordValidator, userNameValidators } from './forms/validators'
 
 
 export function Login () {
@@ -9,43 +10,31 @@ export function Login () {
     await sleep(3000)
     console.log(data)
   }
+
   const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
   return (
     <>
     <h1>Continue your adventure</h1>
     <form onSubmit={handleSubmit(authenticate)}>
-      <label
-        htmlFor="username">
-          Username:
-      </label>
-      <input 
-        type="text"
-        {...register("username", {
-          required: {value: true, message: "Enter a vaild username"}
-        })}
-        aria-invalid={errors.username ? "true" : "false"}
+      <Input 
+        register={register}
+        validators={userNameValidators}
+        name='username'
+        errors={errors.username}
       />
-      <small>
-        {errors.username && <span>{errors.username.message}</span>}
-      </small> 
-      <label 
-        htmlFor="password">
-          Password:
-      </label>
-      <input 
-        type="password"
-        {...register("password", {
-          required: {value: true, message: "Password must be 8 characters"},
-          minLength: {value: 8, message: "Password must be 8 characters"}
-        })} 
+      <Input
+        register={register}
+        validators={passwordValidator}
+        type='password'
+        name='password'
+        errors={errors.password}
       />
-      <small>
-        {errors.password && <span>{errors.password.message}</span>}
-      </small>
+
       <button type="submit" disabled={isSubmitting}>
         {isSubmitting ? 'Going' : 'Go'}
       </button>
     </form>
+    <p>Don't you have an account? <a>Register here</a></p>
     </>
   )
 }
