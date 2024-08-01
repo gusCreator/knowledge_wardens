@@ -1,13 +1,13 @@
 import { getServerSession } from 'next-auth';
 import Image from 'next/image';
 import { authConfig } from './api/auth/[...nextauth]/authConfig';
-import Login from './Login';
+import App  from './App';
 import Logout from './Logout';
 
 export default async function Home() {
   const session = await getServerSession(authConfig);
 
-  if (!session) return <Login />;
+  if (!session) return <App />;
 
   return (
     <main>
