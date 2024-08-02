@@ -5,4 +5,7 @@ export const API_KEY = process.env.API_KEY || '';
 export const CLIENT_ID_GITHUB = process.env.CLIENT_ID_GITHUB || '';
 export const CLIENT_SECRET_GITHUB = process.env.CLIENT_SECRET_GITHUB || '';
 
+export const CLIENT_ID_GOOGLE = process.env.CLIENT_ID_GOOGLE || '';
+export const CLIENT_SECRET_GOOGLE = process.env.CLIENT_SECRET_GOOGLE || '';
+
 export const NEXT_SECRET = process.env.NEXT_SECRET || '';
