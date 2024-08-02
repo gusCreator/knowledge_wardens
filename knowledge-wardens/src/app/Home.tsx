@@ -1,11 +1,9 @@
 'use client';
 
-import { signIn } from 'next-auth/react';
-import { Button } from '@/components/ui/Button';
 import { Session } from 'next-auth';
 import { Login } from './Login';
 import { Logged } from './Logged';
-import Logout from './Logout';
+import { FaGithub } from 'react-icons/fa'
 
 type HomeProps = {
   session?: Session;
@@ -18,14 +16,21 @@ export default function Home({ session }: HomeProps) {
   const email: string = session?.user?.email || '';
 
   return (
-    <main className="grid place-content-center min-h-screen">
-      {
-        !session && <Login />
-      }
-      {
-        session && <Logged name={name} image={image} email={email}/>
-      }
-      <Logout />
-    </main>
+    <>
+      <header className="">
+        {
+          !session && <Login />
+        }
+        {
+          session && <Logged name={name} image={image} email={email} />
+        }
+      </header>
+      <main>
+        {/* Authors section */}
+      </main>
+      <footer className="flex justify-center">
+        <a href="https://github.com/gusCreator/knowledge_wardens" className="flex items-center gap-1"><FaGithub size={20}/> Visit repository</a>
+      </footer>
+    </>
   );
 }
