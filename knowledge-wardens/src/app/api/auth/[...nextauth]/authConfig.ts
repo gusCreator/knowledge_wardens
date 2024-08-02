@@ -1,6 +1,9 @@
-import { CLIENT_ID_GITHUB, CLIENT_SECRET_GITHUB, NEXT_SECRET } from '@/config';
+import {
+  CLIENT_ID_GITHUB, CLIENT_ID_GOOGLE, CLIENT_SECRET_GITHUB, CLIENT_SECRET_GOOGLE, NEXT_SECRET,
+} from '@/config';
 import { AuthOptions } from 'next-auth';
 import GitHubProvider from 'next-auth/providers/github';
+import GoogleProvider from 'next-auth/providers/google';
 import { prisma } from '@/lib/prisma';
 
 export const authConfig: AuthOptions = {
@@ -8,6 +11,10 @@ export const authConfig: AuthOptions = {
     GitHubProvider({
       clientId: CLIENT_ID_GITHUB,
       clientSecret: CLIENT_SECRET_GITHUB,
+    }),
+    GoogleProvider({
+      clientId: CLIENT_ID_GOOGLE,
+      clientSecret: CLIENT_SECRET_GOOGLE,
     }),
   ],
   secret: NEXT_SECRET,
