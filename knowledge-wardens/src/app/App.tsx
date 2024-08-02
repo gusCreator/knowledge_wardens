@@ -1,11 +1,12 @@
 'use client';
 
-import { Login } from "@/Login";
+import { signIn } from 'next-auth/react';
+import { Button } from '@/components/ui/Button';
 
-
-
-export default function App () {
+export default function App() {
   return (
-    <Login />
+    <Button onClick={() => signIn('github')}>
+      GitHub
+    </Button>
   );
 }

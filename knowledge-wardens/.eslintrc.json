@@ -5,7 +5,19 @@
     "next/core-web-vitals"
   ],
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": "./knowledge-wardens/tsconfig.json"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "moduleDirectory": ["node_modules", "src/"]
+      },
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": "./knowledge-wardens/tsconfig.json"
+      }
+    }
   },
   "rules": {
     "linebreak-style": 0,
@@ -17,6 +29,16 @@
     "@typescript-eslint/naming-convention": 0,
     "eslint-disable no-param-reassign": 0,
     "no-param-reassign": 0,
-    "max-len": 0
+    "max-len": 0,
+    "eslint-plugin-import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never",
+      }
+    ]
   }
 }
