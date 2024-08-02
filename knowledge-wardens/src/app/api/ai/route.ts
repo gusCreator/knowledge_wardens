@@ -11,17 +11,24 @@ const az = createAzure({
 
 const model = az('gpt-35-turbo');
 
-export async function GET() {
+export async function GET(res: Request) {
   const session = await getServerSession(authConfig);
 
   if (!session) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
+  const url = new URL(res.url);
+  const prompt = url.searchParams.get('prompt');
+
+  if (!prompt) {
+    return Response.json({ error: 'No prompt provided' }, { status: 400 });
+  }
+
   const { text } = await generateText({
     model,
-    prompt: 'hola, este es un test de promt',
+    prompt,
   });
 
-  return Response.json(text);
+  return Response.json({ chat: text });
 }
