@@ -11,7 +11,13 @@ const nextConfig = {
         protocol: 'https'
       }
     ]
-  }
+  },
+  rewrites: async () => [
+    {
+      source: '/:any',
+      destination: '/'
+    }
+  ]
 };
 
 export default nextConfig;
