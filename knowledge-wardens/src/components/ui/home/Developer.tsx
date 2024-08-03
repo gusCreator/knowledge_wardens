@@ -1,3 +1,4 @@
+import { TOKEN_GITHUB } from "@/config";
 import { API_GITHUB } from "@/constants";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -13,8 +14,16 @@ export function Developer({ username, trueName, shortDescription }: DeveloperPro
   const [imgUser, setImgUser] = useState("");
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch(`${API_GITHUB}/users/${username}`)
+  useEffect(() => {  
+    fetch(`${API_GITHUB}/users/${username}`,
+      {
+        headers: {
+          Accept: 'application/vnd.github+json',
+          Authorization: `Bearer ${TOKEN_GITHUB}`,
+          'X-GitHub-Api-Version': '2022-11-28'
+        }
+      }
+    )
       .then(response => response.json())
       .then(response => {
         if (response.status == 404) {
@@ -35,8 +44,10 @@ export function Developer({ username, trueName, shortDescription }: DeveloperPro
             <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-full"></div>
           ) : (
             <Image
-              className="object-cover"
+              className="object-cover object-center"
               fill
+              sizes="11rem, 176px"
+              priority
               src={imgUser}
               alt={`${username}'s avatar`}
             />

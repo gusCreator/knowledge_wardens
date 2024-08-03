@@ -10,4 +10,4 @@ export const CLIENT_SECRET_GOOGLE = process.env.CLIENT_SECRET_GOOGLE || '';
 
 export const NEXT_SECRET = process.env.NEXT_SECRET || '';
 
-export const TOKEN_GITHUB = process.env.TOKEN_GITHUB || '';
+export const TOKEN_GITHUB = process.env.NEXT_PUBLIC_TOKEN_GITHUB || '';

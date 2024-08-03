@@ -2,7 +2,6 @@ import { Session } from "next-auth";
 import { Login } from "./Login";
 import { Logged } from "./Logged";
 import { FaGithub } from "react-icons/fa";
-import { Developer } from "./Developer";
 import { Developers } from "./Developers";
 
 type HomeProps = {
