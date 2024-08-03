@@ -9,3 +9,5 @@ export const CLIENT_ID_GOOGLE = process.env.CLIENT_ID_GOOGLE || '';
 export const CLIENT_SECRET_GOOGLE = process.env.CLIENT_SECRET_GOOGLE || '';
 
 export const NEXT_SECRET = process.env.NEXT_SECRET || '';
+
+export const TOKEN_GITHUB = process.env.TOKEN_GITHUB || '';
