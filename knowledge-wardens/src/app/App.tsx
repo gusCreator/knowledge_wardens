@@ -5,6 +5,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Game } from '@/components/game/Game';
 import { Home } from '@/components/ui/home/Home';
+import { Loading } from '@/components/ui/loading/Loading';
 
 type AppProps = {
   session?: Session;
@@ -14,14 +15,13 @@ export default function App({ session }: AppProps) {
 
   const [isClient, setIsClient] = useState(false);
 
-  // Solo se configura en el estado en el cliente
+  // Solo se configura el estado en el cliente
   useEffect(() => {
     setIsClient(true);
   }, []);
 
   if (!isClient) {
-    // TODO: Mostrar componente de Loading
-    return null;
+    return <Loading />;
   }
 
   return (

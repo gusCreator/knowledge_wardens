@@ -29,7 +29,7 @@ export function Game({session}: GameProps) {
         <canvas></canvas>
       </main>
       <footer>
-        <Link  to="/">
+        <Link to="/">
           Back
         </Link>
       </footer>
