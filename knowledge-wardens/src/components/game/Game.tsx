@@ -1,6 +1,7 @@
 import { Session } from "next-auth";
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { Unity, useUnityContext } from 'react-unity-webgl';
 
 type GameProps = {
   session?: Session;
@@ -9,11 +10,17 @@ type GameProps = {
 export function Game({session}: GameProps) {
 
   const navigate = useNavigate();
+  const { unityProvider } = useUnityContext({
+    loaderUrl: '/Build/Build/Build.loader.js',
+    dataUrl: '/Build/Build/Build.data.br',
+    frameworkUrl: '/Build/Build/Build.framework.js.br',
+    codeUrl: '/Build/Build/Build.wasm.br'
+  });
 
   useEffect(() => {
-    console.log("UseEffect execute");
     if (!session) {
       navigate("/");
+      return;
     }
   }, [session, navigate]);
 
@@ -26,7 +33,7 @@ export function Game({session}: GameProps) {
   return (
     <>
       <main>
-        <canvas></canvas>
+        <Unity unityProvider={unityProvider} />
       </main>
       <footer>
         <Link to="/">
