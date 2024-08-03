@@ -1,12 +1,10 @@
 'use client';
 
 import { Session } from 'next-auth';
-import { Login } from './Login';
-import { Logged } from './Logged';
-import { FaGithub } from 'react-icons/fa'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { Home } from './Home';
+import { Game } from '@/components/game/Game';
+import { Home } from '@/components/ui/home/Home';
 
 type AppProps = {
   session?: Session;
@@ -31,7 +29,7 @@ export default function App({ session }: AppProps) {
     // componentes a reutilizar
     <Router>
       <Routes>
-        <Route path="/game" element={<h1>Game page</h1>} />
+        <Route path="/game" element={<Game session={session} />} />
         <Route path="/" element={<Home session={session} />} />
       </Routes>
     </Router>
