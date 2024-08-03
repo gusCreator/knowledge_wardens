@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/Button";
 import { UserInfo } from "./UserInfo";
 import Logout from "./Logout";
+import { Link } from "react-router-dom";
 
 type LoggedProps = {
   name: string;
@@ -9,14 +9,12 @@ type LoggedProps = {
 };
 
 export function Logged({ name, image, email }: LoggedProps) {
-  const handleClick = () => {
-    console.log("Redirect to Game");
-  };
+
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col items-center gap-2">
       <UserInfo name={name} image={image} email={email} />
-      <div className="flex gap-2 justify-center">
-        <Button onClick={handleClick}>Continue Adventure</Button>
+      <div className="flex gap-2 justify-center items-center">
+        <Link to="/game" >Continue adventure</Link>
         <Logout />
       </div>
     </div>

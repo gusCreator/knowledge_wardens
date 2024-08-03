@@ -14,7 +14,7 @@ export function UserInfo({ name, image, email }: UserInfoProps) {
       </div>
       <div className="flex flex-1 flex-col self-center gap-2">
         <h5 className="font-semibold text-l">{name}</h5>
-        <h6 className="size italic text-xs">{email}</h6>
+        <h6 className="italic text-s">{email}</h6>
       </div>
     </article>
   )
