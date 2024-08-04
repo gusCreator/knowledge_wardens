@@ -23,9 +23,9 @@ const UnityGame: React.FC = () => {
       const canvas = document.querySelector("#unity-canvas") as HTMLCanvasElement;
       if (canvas) {
         createUnityInstance(canvas, {
-          dataUrl:  '/unity-game/Build.data.br',
-          frameworkUrl:  '/unity-game/Build.framework.js.br',
-          codeUrl:  '/unity-game/Build.wasm.br',
+          dataUrl:  '/unity-game/Build.data',
+          frameworkUrl:  '/unity-game/Build.framework.js',
+          codeUrl:  '/unity-game/Build.wasm',
           streamingAssetsUrl:  '/unity-game/StreamingAssets',
           companyName: "CORS",
           productName: "Knowledge-wardens",
