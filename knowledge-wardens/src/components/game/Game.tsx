@@ -1,15 +1,13 @@
-import { Session } from "next-auth";
-import { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+// import { Session } from 'next-auth';
+import Link from 'next/link';
 import UnityGame from './UnityGame';
 
-type GameProps = {
-  session?: Session;
-}
+// type GameProps = {
+//   session?: Session;
+// };
 
-export function Game({session}: GameProps) {
-
-  const navigate = useNavigate();
+export function Game() {
+  // const navigate = useNavigate();
 
   // useEffect(() => {
   //   console.log("UseEffect execute");
@@ -18,11 +16,10 @@ export function Game({session}: GameProps) {
   //   }
   // }, [session, navigate]);
 
-
   // Estas son las credenciales
-  const name: string = session?.user?.name || '';
-  const image: string = session?.user?.image || '';
-  const email: string = session?.user?.email || '';
+  // const name: string = session?.user?.name || '';
+  // const image: string = session?.user?.image || '';
+  // const email: string = session?.user?.email || '';
 
   return (
     <>
@@ -30,11 +27,10 @@ export function Game({session}: GameProps) {
         <UnityGame />
       </main>
       <footer>
-        <Link to="/">
+        <Link href="/">
           Back
         </Link>
       </footer>
     </>
-  )
+  );
 }
-

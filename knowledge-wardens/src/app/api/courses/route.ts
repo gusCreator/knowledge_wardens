@@ -1,8 +1,5 @@
-import exp from "constants";
-import { NextApiRequest, NextApiResponse } from "next";
-
-//const apiURL = process.env.NEXTAUTH_URL
-//export default function handler(req: NextApiRequest, res: NextApiResponse) {
+// const apiURL = process.env.NEXTAUTH_URL
+// export default function handler(req: NextApiRequest, res: NextApiResponse) {
 //  if (req.method === 'GET') {
 //    const courses = [
 //      { name: 'Hola Mundo' }
@@ -15,15 +12,15 @@ import { NextApiRequest, NextApiResponse } from "next";
 //    res.setHeader('Allow', [ 'GET', 'POST' ]);
 //    res.status(405).end(`Method ${req.method} Not allowed`);
 //  }
-//}
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
+// }
+export async function GET() {
   const data = {
     name: 'Hola Mundo',
-    id: 'xd'
-  }
+    id: 'xd',
+  };
   return Response.json(data);
 }
 
-export async function POST(request: Request) {
+// export async function POST(request: Request) {
 
-}
+// }

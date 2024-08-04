@@ -5,7 +5,7 @@
     "next/core-web-vitals"
   ],
   "parserOptions": {
-    "project": "./knowledge-wardens/tsconfig.json"
+    "project": "./tsconfig.json"
   },
   "settings": {
     "import/resolver": {
@@ -15,7 +15,7 @@
       },
       "typescript": {
         "alwaysTryTypes": true,
-        "project": "./knowledge-wardens/tsconfig.json"
+        "project": "./tsconfig.json"
       }
     }
   },
@@ -30,15 +30,7 @@
     "eslint-disable no-param-reassign": 0,
     "no-param-reassign": 0,
     "max-len": 0,
-    "eslint-plugin-import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never",
-      }
-    ]
+    "eslint-plugin-import/extensions": 0,
+    "no-console": 0
   }
 }

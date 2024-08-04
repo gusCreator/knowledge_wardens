@@ -1,10 +1,10 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 type UserInfoProps = {
   name: string;
   image: string;
   email: string;
-}
+};
 
 export function UserInfo({ name, image, email }: UserInfoProps) {
   return (
@@ -17,5 +17,5 @@ export function UserInfo({ name, image, email }: UserInfoProps) {
         <h6 className="italic text-s">{email}</h6>
       </div>
     </article>
-  )
+  );
 }

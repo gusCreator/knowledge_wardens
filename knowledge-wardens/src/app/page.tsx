@@ -1,11 +1,9 @@
-import { Session, getServerSession } from 'next-auth';
+import { getServerSession } from 'next-auth';
+import { Home } from '@/components/ui/home/Home';
 import { authConfig } from './api/auth/[...nextauth]/authConfig';
-import App from './App';
 
 export default async function Page() {
-  const session: Session | null = await getServerSession(authConfig);
+  const session = await getServerSession(authConfig);
 
-  if (!session) return <App />;
-
-  return <App session={session}/>;
+  return <Home session={session} />;
 }
