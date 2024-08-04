@@ -23,9 +23,9 @@ const UnityGame: React.FC = () => {
       const canvas = document.querySelector("#unity-canvas") as HTMLCanvasElement;
       if (canvas) {
         createUnityInstance(canvas, {
-          dataUrl:  '/unity-game/Build.data.br',
-          frameworkUrl:  '/unity-game/Build.framework.js.br',
-          codeUrl:  '/unity-game/Build.wasm.br',
+          dataUrl:  '/unity-game/Build.data',
+          frameworkUrl:  '/unity-game/Build.framework.js',
+          codeUrl:  '/unity-game/Build.wasm',
           streamingAssetsUrl:  '/unity-game/StreamingAssets',
           companyName: "CORS",
           productName: "Knowledge-wardens",
@@ -45,12 +45,13 @@ const UnityGame: React.FC = () => {
   }, []);
 
   return (
-    <div>
-      <canvas id="unity-canvas" width="960" height="600"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
+    <div className="relative w-screen h-screen overflow-hidden">
+      <canvas id="unity-canvas" className="w-full h-full"></canvas>
+      <div id="unity-loading-bar" className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+        <div id="unity-logo" className="mb-2">
+        </div>
+        <div id="unity-progress-bar-empty" className="w-full bg-gray-300 h-2">
+          <div id="unity-progress-bar-full" className="bg-blue-500 h-full" style={{ width: '0%' }}></div>
         </div>
       </div>
     </div>
