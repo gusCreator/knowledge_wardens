@@ -1,6 +1,7 @@
 import { Session } from "next-auth";
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import UnityGame from './UnityGame';
 
 type GameProps = {
   session?: Session;
@@ -10,12 +11,12 @@ export function Game({session}: GameProps) {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log("UseEffect execute");
-    if (!session) {
-      navigate("/");
-    }
-  }, [session, navigate]);
+  // useEffect(() => {
+  //   console.log("UseEffect execute");
+  //   if (!session) {
+  //     navigate("/");
+  //   }
+  // }, [session, navigate]);
 
 
   // Estas son las credenciales
@@ -26,7 +27,7 @@ export function Game({session}: GameProps) {
   return (
     <>
       <main>
-        <canvas></canvas>
+        <UnityGame />
       </main>
       <footer>
         <Link to="/">
@@ -36,3 +37,4 @@ export function Game({session}: GameProps) {
     </>
   )
 }
+
