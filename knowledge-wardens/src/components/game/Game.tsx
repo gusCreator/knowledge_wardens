@@ -10,12 +10,12 @@ export function Game({session}: GameProps) {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log("UseEffect execute");
-    if (!session) {
-      navigate("/");
-    }
-  }, [session, navigate]);
+  // useEffect(() => {
+  //   console.log("UseEffect execute");
+  //   if (!session) {
+  //     navigate("/");
+  //   }
+  // }, [session, navigate]);
 
 
   // Estas son las credenciales
