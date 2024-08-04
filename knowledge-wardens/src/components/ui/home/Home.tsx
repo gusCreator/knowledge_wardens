@@ -18,15 +18,15 @@ export function Home({ session }: HomeProps) {
 
   return (
     <>
-      <header className="flex flex-col justify-end items-center bg-main-image bg-cover bg-center min-h-[800px] max-h-full p-8">
-        <div className="p-8 bg-gray-600 bg-opacity-40 w-fit rounded-3xl border-yellow-500 border-4">
+      <header className="flex flex-col justify-between items-center bg-main-image bg-cover bg-center min-h-[800px] max-h-full p-8">
+        <h1 className="text-center text-5xl lg:text-7xl xl-text-7xl pt-5 text-yellow-600 font-extrabold">Knowledge Wardens</h1>
+        <div className="p-8 bg-gray-900 bg-opacity-75 w-fit rounded-3xl border-yellow-500 border-4">
           {
             !session && <Login />
           }
           {
             session && <Logged name={name} image={image} email={email} />
           }
-
         </div>
 
       </header>
