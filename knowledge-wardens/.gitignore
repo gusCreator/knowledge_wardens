@@ -38,3 +38,7 @@ next-env.d.ts
 
 pnpm-lock.yaml
 package-lock.json
+
+#local
+*plan.md
+*CourseData.json
