@@ -16,16 +16,17 @@ declare function createUnityInstance(
 
 const UnityGame: React.FC = () => {
   useEffect(() => {
+    console.log(process.env.PUBLIC_URL)
     const script = document.createElement('script');
-    script.src = process.env.PUBLIC_URL + '/unity-game/Build.loader.js';
+    script.src =  '/unity-game/Build.loader.js';
     script.onload = () => {
       const canvas = document.querySelector("#unity-canvas") as HTMLCanvasElement;
       if (canvas) {
         createUnityInstance(canvas, {
-          dataUrl: process.env.PUBLIC_URL + '/unity-game/Build.data.br',
-          frameworkUrl: process.env.PUBLIC_URL + '/unity-game/Build.framework.js.br',
-          codeUrl: process.env.PUBLIC_URL + '/unity-game/Build.wasm.br',
-          streamingAssetsUrl: process.env.PUBLIC_URL + '/unity-game/StreamingAssets',
+          dataUrl:  '/unity-game/Build.data.br',
+          frameworkUrl:  '/unity-game/Build.framework.js.br',
+          codeUrl:  '/unity-game/Build.wasm.br',
+          streamingAssetsUrl:  '/unity-game/StreamingAssets',
           companyName: "CORS",
           productName: "Knowledge-wardens",
           productVersion: "1.0",
