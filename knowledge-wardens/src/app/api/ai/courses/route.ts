@@ -49,5 +49,5 @@ export async function POST(res: Request) {
     prompt: `The course is ${validatedRequest.data.course}, the topic is ${validatedRequest.data.topicName}, and the description is ${validatedRequest.data.topicDescription}`,
   });
 
-  return Response.json(response.object.subthemes);
+  return Response.json({ courses: response.object.subthemes });
 }
