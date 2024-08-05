@@ -5,7 +5,7 @@
     "next/core-web-vitals"
   ],
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": "./knowledge-wardens/tsconfig.json"
   },
   "settings": {
     "import/resolver": {
@@ -15,7 +15,7 @@
       },
       "typescript": {
         "alwaysTryTypes": true,
-        "project": "./tsconfig.json"
+        "project": "./knowledge-wardens/tsconfig.json"
       }
     }
   },

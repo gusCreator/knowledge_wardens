@@ -1,20 +1,17 @@
-'use client'
+'use client';
 
 import Link from 'next/link';
 import UnityGame from './UnityGame';
-import { Session } from 'next-auth';
 
-type GameProps = {
-  session: Session;
-};
+// type GameProps = {
+//   session: Session;
+// };
 
-export function Game({session}: GameProps) {
-
-
+export function Game() {
   // Estos son los datos del usuario
-  const name: string = session.user?.name || '';
-  const image: string = session.user?.image || '';
-  const email: string = session.user?.email || '';
+  // const name: string = session.user?.name || '';
+  // const image: string = session.user?.image || '';
+  // const email: string = session.user?.email || '';
 
   return (
     <main className="w-full min-h-screen relative">
