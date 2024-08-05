@@ -33,14 +33,14 @@ export async function POST(res: Request) {
 
   const request = z.object({
     course: z.string(),
-    topicName: z.string(),
-    topicDescription: z.string(),
+    // topicName: z.string(),
+    // topicDescription: z.string(),
   });
 
   const validatedRequest = request.safeParse({
     course: formData.get('course')?.toString(),
-    topicName: formData.get('topicName')?.toString(),
-    topicDescription: formData.get('topicDescription')?.toString(),
+    // topicName: formData.get('topicName')?.toString(),
+    // topicDescription: formData.get('topicDescription')?.toString(),
   });
 
   if (!validatedRequest.success) {
@@ -50,10 +50,10 @@ export async function POST(res: Request) {
   const response = await generateObject({
     model,
     schema: z.object({
-      questions: z.array(z.string().describe('A question for the topic. Please provide a question in plain text using between 20 and 30 words.')),
+      questions: z.array(z.string().describe('A question for the course. Please provide a question in plain text using between 20 and 30 words.')),
     }),
-    system: 'response with questions of the topic, response six questions.',
-    prompt: `The course is ${validatedRequest.data.course}, the topic is ${validatedRequest.data.topicName}, and the description is ${validatedRequest.data.topicDescription}, remember that you response in json format.`,
+    system: 'Respond with medium level questions about the course, answer six questions. The questions have to be specific. ',
+    prompt: `The course is ${validatedRequest.data.course}, remember that you response in json format.`,
   });
 
   return Response.json(response.object);
