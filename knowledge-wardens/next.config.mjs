@@ -12,12 +12,6 @@ const nextConfig = {
       }
     ]
   },
-  rewrites: async () => [
-    {
-      source: '/:any',
-      destination: '/'
-    }
-  ]
 };
 
 export default nextConfig;

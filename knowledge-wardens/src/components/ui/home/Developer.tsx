@@ -38,6 +38,8 @@ export function Developer({ username, trueName, shortDescription }: DeveloperPro
             <Image
               className="object-cover"
               fill
+              sizes="(max-width: 600px) 500px"
+              priority={false}
               src={imgUser}
               alt={`${username}'s avatar`}
             />
