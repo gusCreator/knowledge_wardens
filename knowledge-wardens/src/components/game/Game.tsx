@@ -1,25 +1,20 @@
-// import { Session } from 'next-auth';
+'use client'
+
 import Link from 'next/link';
 import UnityGame from './UnityGame';
+import { Session } from 'next-auth';
 
-// type GameProps = {
-//   session?: Session;
-// };
+type GameProps = {
+  session: Session;
+};
 
-export function Game() {
-  // const navigate = useNavigate();
+export function Game({session}: GameProps) {
 
-  // useEffect(() => {
-  //   console.log("UseEffect execute");
-  //   if (!session) {
-  //     navigate("/");
-  //   }
-  // }, [session, navigate]);
 
-  // Estas son las credenciales
-  // const name: string = session?.user?.name || '';
-  // const image: string = session?.user?.image || '';
-  // const email: string = session?.user?.email || '';
+  // Estos son los datos del usuario
+  const name: string = session.user?.name || '';
+  const image: string = session.user?.image || '';
+  const email: string = session.user?.email || '';
 
   return (
     <main className="w-full min-h-screen relative">
