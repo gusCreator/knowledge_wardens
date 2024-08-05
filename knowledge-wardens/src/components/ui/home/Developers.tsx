@@ -1,4 +1,4 @@
-import { Developer } from "./Developer";
+import { Developer } from './Developer';
 
 export function Developers() {
   return (
@@ -12,5 +12,5 @@ export function Developers() {
       <Developer username="rikich3" trueName="Ricardo Mauricio Chambilla" shortDescription="UNSA student" />
       <Developer username="Gocardi" trueName="Diego Alejandro Carbajal" shortDescription="UNSA student" />
     </div>
-  )
+  );
 }
