@@ -9,6 +9,7 @@ type LoggedProps = {
 };
 
 export function Logged({ name, image, email }: LoggedProps) {
+
   return (
     <>
       <UserInfo name={name} image={image} email={email} />
@@ -21,3 +22,4 @@ export function Logged({ name, image, email }: LoggedProps) {
     </>
   );
 }
+
