@@ -47,7 +47,7 @@ export async function POST(res: Request) {
 
   const response = await generateText({
     model,
-    prompt: `The course is ${validatedRequest.data.course}, the topic is ${validatedRequest.data.topicName}, and the description is ${validatedRequest.data.topicDescription} and the question is ${validatedRequest.data.question}. Please provide an answer in plain text using between 20 and 30 words.`,
+    prompt: `The course is ${validatedRequest.data.course}, the topic is ${validatedRequest.data.topicName}, and the description is ${validatedRequest.data.topicDescription} and the question is ${validatedRequest.data.question}. Please provide an answer in plain text using between 20 and 30 words. Respond in Spanish please.`,
   });
 
   console.log(response);
