@@ -46,7 +46,7 @@ export async function POST(res: Request) {
     model,
     schema: z.object({
       results: z.array(z.number().min(0).max(1).describe('1 if the answer is correct and 0 if the answer is incorrect.')),
-      correct: z.array(z.string().describe('The ideal answer for each question. Please provide an answer using between 20 and 30 words.')),
+      correct: z.array(z.string().describe('The ideal answer for each question. Please provide an answer in plain text using between 20 and 30 words.')),
     }),
     system: 'This is a game where the goal is to learn about programming. Try to give it a medieval game tone. You will receive an array of questions and another of answers, of the same length, the answer 0 belongs to question 0 and so on with the others, you must check if the answer is correct for its respective question. You will answer in the array of numbers "results", 1 if the answer is correct and 0 if the answer is incorrect important: Do not correct spelling mistakes, so on for each question. In addition, you will answer "correct" with an array of strings, about the ideal answer for each question and responde why is bad answer. Answer in Spanish.',
     prompt: JSON.stringify(validatedRequest.data),
