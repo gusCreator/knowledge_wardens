@@ -1,17 +1,22 @@
-import { API_KEY, RESOURCE_NAME } from '@/config';
-import { createAzure } from '@ai-sdk/azure';
+import { MISTRAL_API_KEY } from '@/config';
+// import { createAzure } from '@ai-sdk/azure';
 import { generateText } from 'ai';
+import { createMistral } from '@ai-sdk/mistral';
 // import { getServerSession } from 'next-auth';
 // import { authConfig } from '@/app/api/auth/[...nextauth]/authConfig';
 
 import { z } from 'zod';
 
-const az = createAzure({
-  resourceName: RESOURCE_NAME,
-  apiKey: API_KEY,
+// const az = createAzure({
+//   resourceName: RESOURCE_NAME,
+//   apiKey: API_KEY,
+// });
+
+const mi = createMistral({
+  apiKey: MISTRAL_API_KEY,
 });
 
-const model = az('gpt-4o');
+const model = mi('mistral-large-latest');
 
 export async function POST(res: Request) {
   // const session = await getServerSession(authConfig);

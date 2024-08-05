@@ -11,3 +11,5 @@ export const CLIENT_SECRET_GOOGLE = process.env.CLIENT_SECRET_GOOGLE || '';
 export const NEXT_SECRET = process.env.NEXT_SECRET || '';
 
 export const TOKEN_GITHUB = process.env.TOKEN_GITHUB || '';
+
+export const MISTRAL_API_KEY = process.env.MISTRAL_API_KEY || '';
