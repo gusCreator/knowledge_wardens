@@ -50,9 +50,9 @@ export async function POST(res: Request) {
   const response = await generateObject({
     model,
     schema: z.object({
-      subthemes: z.array(z.string().describe('A content subtheme for the topic contein 60 a 70 words. Provide the response in plain text.')),
+      subthemes: z.array(z.string().describe('A content subtheme for the topic contein 60 a 70 words. You need to explain this subtheme in detail. Provide the response in plain text.')),
     }),
-    system: 'You generate six subthemes for the topic.',
+    system: 'You generate six subthemes for the topic. Choose the most relevant and practical topics',
     prompt: `The course is ${validatedRequest.data.course}, the topic is ${validatedRequest.data.topicName}, and the description is ${validatedRequest.data.topicDescription}`,
   });
 
