@@ -50,9 +50,9 @@ export async function POST(res: Request) {
   const response = await generateObject({
     model,
     schema: z.object({
-      subthemes: z.array(z.string().describe('A content subtheme for the topic. You need to explain this subtheme in detail like a teacher. Provide the response in plain text.')),
+      subthemes: z.array(z.string().describe('Explain each subtheme in detail as if you were teaching a class. Provide a thorough explanation, including examples where applicable, to ensure a clear understanding. The response should be in plain text.')),
     }),
-    system: 'You generate subthemes for the topic and explain them in detail. Choose the most relevant and practical topics, the subthemes have to be enough to learn the course completely.',
+    system: 'You generate subthemes for the topic and explain them in detail. Choose the most relevant and practical topics, and ensure that each subtheme is explained thoroughly to cover the entire course content.',
     prompt: `The course is ${validatedRequest.data.course}, the topic is ${validatedRequest.data.topicName}, and the description is ${validatedRequest.data.topicDescription}. Respond in Spanish please.`,
   });
 
