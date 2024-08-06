@@ -17,7 +17,7 @@ export function Home({ session }: HomeProps) {
       <main>
         {/* Algunas imágenes del juego */}
         <About />
-        <Characters />
+        <Characters/>
         <Developers />
         <Technologies />
       </main>

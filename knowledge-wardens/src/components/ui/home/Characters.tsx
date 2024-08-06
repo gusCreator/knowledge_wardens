@@ -60,17 +60,20 @@ export function Characters() {
       >
         <h1 className="text-4xl md:text-6xl font-title font-bold">Characters</h1>
 
-        <div className="md:flex items-center md:gap-10">
+        <div className="flex items-center justify-between
+        md:gap-10 w-[90vw]">
+
           <button
             type="button"
             onClick={handlePrevious}
-            className="text-xl md:text-4xl font-text text-bold text-center p-2 "
+            className="text-xl md:text-4xl font-text text-bold text-center p-2 pulse"
           >
             {'< '}
           </button>
 
-          <div className="relative w-full
-          overflow-hidden max-w-[100px]"
+          <div className="relative md:max-w-[50vw]
+          overflow-hidden max-w-[90vw]
+          "
           >
             <div
               className="flex transition-transform duration-700 ease-in-out"
@@ -109,7 +112,9 @@ export function Characters() {
           <button
             type="button"
             onClick={handleNext}
-            className="text-4xl font-text text-bold text-center p-2 "
+            className="text-4xl font-text text-bold text-center p-2 
+            pulse
+            "
           >
             {'>'}
           </button>
