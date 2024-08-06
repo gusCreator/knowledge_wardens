@@ -52,7 +52,7 @@ export async function POST(res: Request) {
     schema: z.object({
       questions: z.array(z.string().describe('A question for the course. Please provide a question in plain text using between 20 and 30 words.')),
     }),
-    system: 'Respond with medium level questions about the course, answer up to 10 questions. The questions have to be specific. ',
+    system: 'Respond with medium level questions about the course, answer up to 6 questions. The questions have to be specific. ',
     prompt: `The course is ${validatedRequest.data.course}, remember that you response in json format. Respond in spanish please.`,
   });
 
