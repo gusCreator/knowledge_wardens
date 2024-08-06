@@ -55,6 +55,10 @@ const config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        btn: {
+          border: '#546671',
+          bg: '#2c2c2c',
+        },
       },
       backgroundImage: {
         'main-desktop': "url('/images/bg/desktop.jpg')",
