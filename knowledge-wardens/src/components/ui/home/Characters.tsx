@@ -61,7 +61,8 @@ export function Characters() {
         <h1 className="text-4xl md:text-6xl font-title font-bold">Characters</h1>
 
         <div className="flex items-center justify-between
-        md:gap-10 w-[90vw]">
+        md:gap-10 w-[90vw]"
+        >
 
           <button
             type="button"
@@ -112,7 +113,7 @@ export function Characters() {
           <button
             type="button"
             onClick={handleNext}
-            className="text-4xl font-text text-bold text-center p-2 
+            className="text-4xl font-text text-bold text-center p-2
             pulse
             "
           >
