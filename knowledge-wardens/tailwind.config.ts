@@ -63,6 +63,7 @@ const config = {
       backgroundImage: {
         'main-desktop': "url('/images/bg/desktop.jpg')",
         'main-mobile': "url('/images/bg/mobile.jpg')",
+        'main-text': "url('/images/things/port.png')",
 
       },
       borderRadius: {

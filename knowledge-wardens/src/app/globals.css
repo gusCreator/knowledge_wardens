@@ -78,6 +78,15 @@
   }
 }
 
+@keyframe typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 #sliderAbout-track {
   display: flex;
   animation: aboutSliderDesktop 15s linear infinite;
