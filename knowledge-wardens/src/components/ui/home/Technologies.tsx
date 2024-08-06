@@ -1,5 +1,5 @@
 'use client';
-  
+
 import { Slide } from './Slide';
 
 export function Technologies() {
@@ -12,7 +12,6 @@ export function Technologies() {
         <Slide techName="unity" />
         <Slide techName="mistral" />
       </div>
-
     </div>
   );
 }
