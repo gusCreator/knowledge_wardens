@@ -57,6 +57,7 @@ export function Header({ session }: HeaderProps) {
         />
       </div>
 
+
       <Image src="/images/things/teleporter.png" alt="Teleport" width={300} height={200}
         className='absolute 
         top-[50%] w-[200px] md:w-[300px]
