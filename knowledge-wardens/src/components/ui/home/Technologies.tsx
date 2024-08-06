@@ -3,7 +3,6 @@
 import { Slide } from './Slide';
 
 export function Technologies() {
-
   return (
     <div className="overflow-hidden">
       <div className="flex justify-center items-center">
