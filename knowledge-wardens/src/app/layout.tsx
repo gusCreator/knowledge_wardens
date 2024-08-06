@@ -1,12 +1,18 @@
 import '@/app/globals.css';
-import { Inter as FontSans } from 'next/font/google';
+import { Silkscreen, Pixelify_Sans } from 'next/font/google';
 
 import { cn } from '@/lib/utils';
 import AuthProvider from '@/components/providers/AuthProvider';
 
-const fontSans = FontSans({
+const silkscreen = Silkscreen({
   subsets: ['latin'],
-  variable: '--font-sans',
+  weight: ['400'],
+  variable: '--font-title',
+});
+
+const pixelifySans = Pixelify_Sans({
+  subsets: ['latin'],
+  variable: '--font-text',
 });
 
 export default function RootLayout({ children }: {
@@ -17,8 +23,9 @@ export default function RootLayout({ children }: {
       <head />
       <body
         className={cn(
-          'min-h-screen bg-background font-sans antialiased',
-          fontSans.variable,
+          'min-h-screen bg-background font-text antialiased',
+          silkscreen.variable,
+          pixelifySans.variable,
         )}
       >
         <AuthProvider>

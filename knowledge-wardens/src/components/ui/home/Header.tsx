@@ -15,7 +15,7 @@ export function Header({ session }: HeaderProps) {
     <header className="flex flex-col justify-between items-center 
     bg-main-mobile md:bg-main-desktop
      bg-cover bg-center min-h-[800px] max-h-full p-8">
-      <h1 className="text-center text-5xl lg:text-7xl xl:text-7xl pt-5 text-yellow-600 font-extrabold">
+      <h1 className="text-center text-5xl lg:text-7xl xl:text-7xl pt-5 text-yellow-600 font-extrabold  font-title">
         Knowledge Wardens
       </h1>
       <h3 className="text-gray-300 text-xl lg:text-2xl xl:text-2xl w-2/3 bg-gray-900 bg-opacity-75 bg- rounded-3xl p-4">
