@@ -7,7 +7,7 @@ import { generateObject } from 'ai';
 
 import { z } from 'zod';
 
-export const maxDuration = 30;
+export const maxDuration = 60;
 
 // const az = createAzure({
 //   resourceName: RESOURCE_NAME,
@@ -50,9 +50,9 @@ export async function POST(res: Request) {
   const response = await generateObject({
     model,
     schema: z.object({
-      subthemes: z.array(z.string().describe('Explain each subtheme in detail as if you were teaching a class. Provide a thorough explanation, including examples where applicable, to ensure a clear understanding. The response should be in plain text.')),
+      subthemes: z.array(z.string().describe('A detailed explanation for the subtheme. Include detail definitions and examples. The response should be in plain text.')),
     }),
-    system: 'You generate subthemes for the topic and explain them in detail. Choose the most relevant and practical topics, and ensure that each subtheme is explained thoroughly to cover the entire course content.',
+    system: 'You are a good teacher who explains each theme with topic in great detail. You generate subthemes for the topic and explain them in detail. Choose the most relevant and practical topics, and ensure that each subtheme is explained thoroughly to cover the entire course content.',
     prompt: `The course is ${validatedRequest.data.course}, the topic is ${validatedRequest.data.topicName}, and the description is ${validatedRequest.data.topicDescription}. Respond in Spanish please.`,
   });
 
