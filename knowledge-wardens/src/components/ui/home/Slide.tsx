@@ -6,12 +6,11 @@ type SlideProps = {
 
 export function Slide({ techName }: SlideProps) {
   return (
-    <div className="relative">
+    <div className="flex-grow-0 h-64 relative">
       <Image
-        className="w-full h-full"
+        className="object-contain"
         src={`/${techName}.svg`}
-        width={200}
-        height={100}
+        fill
         alt={`${techName}'s image`}
       />
     </div>
