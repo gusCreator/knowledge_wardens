@@ -64,7 +64,8 @@ const config = {
         'main-desktop': "url('/images/bg/desktop.jpg')",
         'main-mobile': "url('/images/bg/mobile.jpg')",
         'main-text': "url('/images/things/port.png')",
-
+        'footer-desktop': "url('/images/bg/fdesktop.jpg')",
+        'footer-mobile': "url('/images/bg/fmobile.jpg')",
       },
       borderRadius: {
         lg: 'var(--radius)',
