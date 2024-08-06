@@ -1,8 +1,10 @@
 import { Session } from 'next-auth';
-import { FaGithub } from 'react-icons/fa';
 import { Developers } from './Developers';
 import { Header } from './Header';
 import { Technologies } from './Technologies';
+import { Footer } from './Footer';
+import { About } from './About';
+import { Characters } from './Characters';
 
 type HomeProps = {
   session?: Session | null;
@@ -14,16 +16,12 @@ export function Home({ session }: HomeProps) {
       <Header session={session} />
       <main>
         {/* Algunas imágenes del juego */}
+        <About />
+        <Characters />
         <Developers />
         <Technologies />
       </main>
-      <footer className="flex justify-center bg-black p-5">
-        <a href="https://github.com/gusCreator/knowledge_wardens" className="flex items-center gap-1 text-white">
-          <FaGithub size={20} />
-          {' '}
-          Visit repository
-        </a>
-      </footer>
+      <Footer />
     </>
   );
 }

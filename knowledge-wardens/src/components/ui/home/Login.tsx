@@ -6,22 +6,32 @@ import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 export function Login() {
   return (
-    <>
-      <h3 className="text-center text-3xl lg:text-4xl xl-text-4xl text-orange-600 font-extrabold">
-        Start adventure
-      </h3>
-      <div className="flex flex-row gap-2">
-        <Button onClick={() => signIn('github')} className="flex items-center gap-1 w-full bg-yellow-500 text-black hover:bg-orange-600">
-          <FaGithub size={18} />
-          {' '}
-          GitHub
-        </Button>
-        <Button onClick={() => signIn('google')} className="flex item-center gap-1 w-full bg-yellow-500 text-black hover:bg-orange-600">
-          <FaGoogle size={18} />
-          {' '}
-          Google
-        </Button>
-      </div>
-    </>
+    <div className="flex flex-row gap-4 bg-green-950 p-4">
+      <Button
+        onClick={() => signIn('github')}
+        className="flex items-center gap-1 w-max
+        border-4 rounded-none text-3xl
+        bg-btn-bg border-btn-border text-white shadow-inner
+        hover:bg-white hover:text-black
+        pulse"
+      >
+        <FaGithub size={18} />
+        {' '}
+        GitHub
+      </Button>
+      <Button
+        onClick={() => signIn('google')}
+        className="flex items-center gap-1 w-max
+          border-4 rounded-none text-3xl
+          bg-btn-bg border-btn-border text-white shadow-inner
+          hover:bg-white hover:text-black
+          pulse
+          "
+      >
+        <FaGoogle size={18} />
+        {' '}
+        Google
+      </Button>
+    </div>
   );
 }

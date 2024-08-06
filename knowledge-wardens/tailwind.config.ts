@@ -55,9 +55,17 @@ const config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        btn: {
+          border: '#546671',
+          bg: '#2c2c2c',
+        },
       },
       backgroundImage: {
-        'main-image': "url('/images/header-main-page.webp')",
+        'main-desktop': "url('/images/bg/desktop.jpg')",
+        'main-mobile': "url('/images/bg/mobile.jpg')",
+        'main-text': "url('/images/things/port.png')",
+        'footer-desktop': "url('/images/bg/fdesktop.jpg')",
+        'footer-mobile': "url('/images/bg/fmobile.jpg')",
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -80,6 +88,8 @@ const config = {
       },
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
+        title: ['var(--font-title)', ...fontFamily.sans],
+        text: ['var(--font-text)', ...fontFamily.sans],
       },
     },
   },
