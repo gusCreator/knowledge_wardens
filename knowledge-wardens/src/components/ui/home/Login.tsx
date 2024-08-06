@@ -3,6 +3,7 @@
 
 import { Button } from '@/components/ui/Button';
 import { signIn } from 'next-auth/react';
+import { transform } from 'next/dist/build/swc';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 
@@ -14,7 +15,9 @@ export function Login() {
         className="flex items-center gap-1 w-max
         border-4 rounded-none text-3xl
         bg-btn-bg border-btn-border text-white shadow-inner
-        hover:bg-white hover:text-black" >
+        hover:bg-white hover:text-black
+        pulse"
+        >
           <FaGithub size={18} />
           {' '}
           GitHub
@@ -23,7 +26,9 @@ export function Login() {
           className="flex items-center gap-1 w-max
           border-4 rounded-none text-3xl
           bg-btn-bg border-btn-border text-white shadow-inner
-          hover:bg-white hover:text-black">
+          hover:bg-white hover:text-black
+          pulse
+          ">
           <FaGoogle size={18} />
           {' '}
           Google

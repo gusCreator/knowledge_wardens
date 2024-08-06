@@ -27,7 +27,7 @@ export function Header({ session }: HeaderProps) {
           Knowledge Wardens
         </h1>
 
-        <div className="relative 
+        <div className="relative flex flex-col items-center justify-center
         md:w-3/6 rounded-3xl p-4 bg-main-text bg-cover bg-center">
           <h3 className="text-gray-300 md:text-xl lg:text-2xl xl:text-2xl relative z-10 text-center">
             The powerful witch wizard has possessed your master and there is only one way to defeat him. You must overcome their ancient knowledge. A legend is your hope, look for knowledge wardens and achieve the victory.
@@ -40,7 +40,9 @@ export function Header({ session }: HeaderProps) {
         w-[100%]
         mt-7
         md:w-2/6 text-center md:m-auto text-3xl lg:text-4xl xl:text-5xl  text-withe font-title font-bold text-white
-      ">
+        pulse
+      "
+      >
           Start adventure
         </h2>
       </div>

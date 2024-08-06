@@ -78,13 +78,14 @@
   }
 }
 
-@keyframe typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+
+
+.pulse{
+  transition: all 0.2s ease-in-out;
+}
+
+.pulse:hover {
+  transform: scale(1.1);
 }
 
 #sliderAbout-track {
