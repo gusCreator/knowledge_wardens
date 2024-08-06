@@ -7,7 +7,7 @@ import { generateObject } from 'ai';
 
 import { z } from 'zod';
 
-export const maxDuration = 60;
+export const maxDuration = 80;
 
 // const az = createAzure({
 //   resourceName: RESOURCE_NAME,
