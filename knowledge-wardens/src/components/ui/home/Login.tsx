@@ -13,7 +13,7 @@ export function Login() {
         border-4 rounded-none text-3xl
         bg-btn-bg border-btn-border text-white shadow-inner
         hover:bg-white hover:text-black
-        pulse"
+        pulse z-20"
       >
         <FaGithub size={18} />
         {' '}
@@ -25,7 +25,7 @@ export function Login() {
           border-4 rounded-none text-3xl
           bg-btn-bg border-btn-border text-white shadow-inner
           hover:bg-white hover:text-black
-          pulse
+          pulse z-20
           "
       >
         <FaGoogle size={18} />

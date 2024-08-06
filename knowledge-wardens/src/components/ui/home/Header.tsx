@@ -2,6 +2,7 @@ import { Session } from 'next-auth';
 import Image from 'next/image';
 import { Login } from './Login';
 import { Logged } from './Logged';
+import { UserInfo } from './UserInfo';
 
 type HeaderProps = {
   session?: Session | null;
@@ -9,7 +10,6 @@ type HeaderProps = {
 
 export function Header({ session }: HeaderProps) {
   const name: string = session?.user?.name || '';
-  const image: string = session?.user?.image || '';
   const email: string = session?.user?.email || '';
 
   return (
@@ -43,7 +43,12 @@ export function Header({ session }: HeaderProps) {
         pulse
       "
         >
-          Start adventure
+          {
+            session && <UserInfo name={name} email={email} />
+          }
+          {
+            !session && <span>Start your adventure</span>
+          }
         </h2>
       </div>
 
@@ -81,7 +86,7 @@ export function Header({ session }: HeaderProps) {
           !session && <Login />
         }
         {
-          session && <Logged name={name} image={image} email={email} />
+          session && <Logged />
         }
       </div>
     </header>
