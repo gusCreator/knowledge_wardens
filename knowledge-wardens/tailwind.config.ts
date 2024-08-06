@@ -57,7 +57,9 @@ const config = {
         },
       },
       backgroundImage: {
-        'main-image': "url('/images/header-main-page.webp')",
+        'main-desktop': "url('/images/bg/desktop.jpg')",
+        'main-mobile': "url('/images/bg/mobile.jpg')",
+
       },
       borderRadius: {
         lg: 'var(--radius)',

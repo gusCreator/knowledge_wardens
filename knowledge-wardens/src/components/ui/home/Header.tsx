@@ -12,7 +12,9 @@ export function Header({ session }: HeaderProps) {
   const email: string = session?.user?.email || '';
 
   return (
-    <header className="flex flex-col justify-between items-center bg-main-image bg-cover bg-center min-h-[800px] max-h-full p-8">
+    <header className="flex flex-col justify-between items-center 
+    bg-main-mobile md:bg-main-desktop
+     bg-cover bg-center min-h-[800px] max-h-full p-8">
       <h1 className="text-center text-5xl lg:text-7xl xl:text-7xl pt-5 text-yellow-600 font-extrabold">
         Knowledge Wardens
       </h1>
