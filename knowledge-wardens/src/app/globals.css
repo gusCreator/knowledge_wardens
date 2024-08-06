@@ -59,6 +59,37 @@
   }
 }
 
+@keyframes aboutSliderDesktop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-16rem * 5));
+  }
+}
+
+@keyframes aboutSliderMobile {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-16rem * 5));
+  }
+}
+
+#sliderAbout-track {
+  display: flex;
+  animation: aboutSliderDesktop 15s linear infinite;
+  width: calc(16rem * 10);
+}
+
+@media (max-width: 768px) {
+  #sliderAbout-track {
+    animation: aboutSliderMobile 15s linear infinite;
+    width: calc(16rem * 10);
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
