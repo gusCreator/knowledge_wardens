@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { UserInfo } from './UserInfo';
 import Logout from './Logout';
 
-
 type LoggedProps = {
   name: string;
   image: string;

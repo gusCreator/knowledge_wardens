@@ -2,7 +2,7 @@ import { Developer } from './Developer';
 
 export function Developers() {
   return (
-    <section className='p-8'>
+    <section className="p-8">
       <h1 className="text-5xl font-title font-bold text-center mb-8">Developers</h1>
       <div className="flex flex-wrap justify-center gap-5">
         <Developer username="gusCreator" trueName="Luis Gustavo Sequeiros" shortDescription="UNSA student" />

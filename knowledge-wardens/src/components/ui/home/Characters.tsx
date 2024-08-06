@@ -1,4 +1,5 @@
 'use client';
+
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -16,39 +17,37 @@ const characters = [
     image: '/images/characters/arquero.png',
   },
   {
-    color:'#DAAB7D',
+    color: '#DAAB7D',
     name: 'Personaje 3',
     description: 'Lorem ipsum dolor sit amet consectetur. Ligula vel amet nullam cursus. Tincidunt quam ipsum tortor dictum sed. Velit magna nisl dignissim ullamcorper nibh malesuada iaculis sed. Faucibus at vitae lacus magna. Urna massa nisl elementum magnis porttitor enim adipiscing habitant arcu.',
     image: '/images/characters/changuito.png',
   },
   {
-    color:'#A07866',
+    color: '#A07866',
     name: 'Personaje 4',
     description: 'Nisi ut eu non enim quis blandit. Id tellus mattis nibh pellentesque accumsan urna. Sed gravida laoreet dignissim eu faucibus. Volutpat felis elit arcu tellus. Fermentum morbi bibendum sed placerat arcu congue lectus id netus.',
     image: '/images/characters/prince.png',
   },
   {
-    color:'#9F96A3',
+    color: '#9F96A3',
     name: 'Personaje 5',
     description: 'Lorem ipsum dolor sit amet consectetur. Ligula vel amet nullam cursus. Tincidunt quam ipsum tortor dictum sed. Velit magna nisl digniss im ullamcorper nibh malesuada iaculis sed. Faucibus at vitae lacus magna. Urna massa nisl elementum magnis porttitor enim adipiscing habitant arcu.',
     image: '/images/characters/guardian.png',
-  }
-]
+  },
+];
 
 export function Characters() {
   const [currentCharacter, setCurrentCharacter] = useState(0);
 
-
   const handlePrevious = () => {
-    setCurrentCharacter((prev) => (prev === 0 ? characters.length-1: prev - 1));
-  }
+    setCurrentCharacter((prev) => (prev === 0 ? characters.length - 1 : prev - 1));
+  };
 
   const handleNext = () => {
-    setCurrentCharacter((prev) => (prev === characters.length-1 ? 0 : prev + 1));
+    setCurrentCharacter((prev) => (prev === characters.length - 1 ? 0 : prev + 1));
   };
 
   const character = characters[currentCharacter];
-
 
   return (
     <section className="bg-btn-bg">
@@ -57,28 +56,32 @@ export function Characters() {
       min-h-[100vh] md:h-[100vh] w-full
       flex flex-col justify-evenly items-center md:gap-4
       md:p-[4%] text-black transition-colors duration-500"
-      style={{ backgroundColor: character.color }}
+        style={{ backgroundColor: character.color }}
       >
         <h1 className="text-4xl md:text-6xl font-title font-bold">Characters</h1>
 
         <div className="md:flex items-center md:gap-10">
           <button
+            type="button"
             onClick={handlePrevious}
             className="text-xl md:text-4xl font-text text-bold text-center p-2 "
           >
             {'< '}
           </button>
 
-          <div className="relative w-full 
-          overflow-hidden max-w-[100px]">
+          <div className="relative w-full
+          overflow-hidden max-w-[100px]"
+          >
             <div
               className="flex transition-transform duration-700 ease-in-out"
               style={{
                 transform: `translateX(-${currentCharacter * 100}%)`,
               }}
             >
+              {/* eslint-disable-next-line @typescript-eslint/no-shadow */}
               {characters.map((character, index) => (
                 <div
+                  // eslint-disable-next-line react/no-array-index-key
                   key={index}
                   className="min-w-full flex flex-col items-center"
                 >
@@ -104,6 +107,7 @@ export function Characters() {
           </div>
 
           <button
+            type="button"
             onClick={handleNext}
             className="text-4xl font-text text-bold text-center p-2 "
           >

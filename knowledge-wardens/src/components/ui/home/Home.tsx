@@ -1,5 +1,4 @@
 import { Session } from 'next-auth';
-import { FaGithub } from 'react-icons/fa';
 import { Developers } from './Developers';
 import { Header } from './Header';
 import { Technologies } from './Technologies';
